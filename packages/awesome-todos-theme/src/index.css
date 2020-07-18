@@ -1,0 +1,26 @@
+:root {
+	/* Colors */
+	--text-color: #ffffff;
+	--background-color: #efdec9;
+	--green: #3abca7;
+	--orange: #f29c21;
+	--red: #d65949;
+
+	/* Fonts size */
+	--font-size-headings: 18px;
+	--font-size-body: 14px;
+
+	/* Fonts weights */
+	--font-weight-body: 400;
+	--font-weight-heading: 700;
+	--font-weight-bold: 700;
+
+	/* Spacings */
+	--spacing-xxs: 1px;
+	--spacing-xs: 5px;
+	--spacing-s: 10px;
+	--spacing-m: 15px;
+	--spacing-l: 20px;
+	--spacing-xl: 25px;
+	--spacing-xxl: 30px;
+}

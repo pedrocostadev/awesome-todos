@@ -1,0 +1,11 @@
+.add-todo {
+	display: grid;
+	grid-template-columns: 7% auto;
+	padding: var(--spacing-xs);
+}
+
+.add-todo-input {
+	box-sizing: border-box;
+	padding: var(--spacing-m) var(--spacing-xs);
+	border: 1px solid var(--green);
+}

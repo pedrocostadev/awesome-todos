@@ -1,0 +1,15 @@
+{
+	"name": "awesome-todos-theme",
+	"version": "0.0.1",
+	"description": "awesome-todos theme",
+	"main": "src/index.css",
+	"license": "ISC",
+	"author": "Pedro Costa",
+	"devDependencies": {
+		"stylelint": "^13.6.1",
+		"stylelint-config-standard": "^20.0.0"
+	},
+	"scripts": {
+		"lint": "npx stylelint \"**/*.css\""
+	}
+}

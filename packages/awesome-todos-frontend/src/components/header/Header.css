@@ -1,0 +1,20 @@
+.header-container {
+	height: var(--head-height);
+	background-color: var(--yellow-light);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+	background-color: var(--green);
+	color: var(--text-color);
+	font-weight: bold;
+}
+
+.header-app-name {
+	padding-left: var(--spacing-s);
+	font-weight: bold;
+}

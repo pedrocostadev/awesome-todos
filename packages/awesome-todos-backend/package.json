@@ -1,0 +1,42 @@
+{
+	"name": "awesome-todos-backend",
+	"version": "1.0.0",
+	"description": "awesome-todos backend with node, expressjs and mongoose",
+	"main": "src/server.ts",
+	"scripts": {
+		"start": "ts-node src/server.ts",
+		"start:dev": "nodemon",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint '*/**/*.ts' --quiet --fix"
+	},
+	"author": "Pedro Costa",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.9.23",
+		"ts-node": "^8.10.2",
+		"typescript": "^3.9.6",
+		"awesome-todos-types": "^0.0.2"
+	},
+	"devDependencies": {
+		"@types/bcryptjs": "^2.4.2",
+		"@types/body-parser": "^1.19.0",
+		"@types/cors": "^2.8.6",
+		"@types/express": "^4.17.7",
+		"@types/jsonwebtoken": "^8.5.0",
+		"@types/mongoose": "^5.7.31",
+		"@types/node": "^14.0.22",
+		"@types/nodemon": "^1.19.0",
+		"nodemon": "^2.0.4",
+		"prettier": "^2.0.4",
+		"@typescript-eslint/eslint-plugin": "^2.28.0",
+		"@typescript-eslint/parser": "^2.28.0",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.1",
+		"eslint-plugin-prettier": "^3.1.3"
+	}
+}

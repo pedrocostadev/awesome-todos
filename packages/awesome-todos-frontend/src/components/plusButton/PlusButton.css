@@ -1,0 +1,8 @@
+.plus-button {
+	display: flex;
+	align-items: center;
+	margin-right: var(--spacing-xs);
+	justify-content: center;
+	background-color: var(--green);
+	border: none;
+}
