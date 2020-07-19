@@ -2,22 +2,36 @@
 
 An app develop with a monorepo stratey and bootstrapped using [Lerna](https://github.com/lerna/lerna).
 
-## Frontend stack
+## Screenshot
+
+![Screen Shot](./screenshots/screen_shot_19_07_20.png)
+
+## Install dependencies
+
+Run `yarn bootstrap` at project root.
+
+## How to run
+
+Run `yarn start` at project root.
+
+## Stack
+
+### Frontend
 - [React](https://github.com/facebook/react)
 - [React-Query](https://github.com/tannerlinsley/react-query)
 - [Axios](https://github.com/axios/axios)
 - [CSS Modules](https://github.com/css-modules/css-modules)
 
-## Backend stack
+### Backend
 - [NodeJs](https://github.com/nodejs)
 - [ExpressJs](https://github.com/expressjs/express)
 - [Mongoose](https://github.com/Automattic/mongoose)
 
-## Testing stack
+### Testing
 - [Jest](https://github.com/facebook/jest)
 - [Testing-Library/react](https://testing-library.com/docs/react-testing-library/intro)
 
-## Other frameworks
+### Other frameworks
 - [Typescript](https://github.com/microsoft/TypeScript)
 - [Nodemon](https://github.com/remy/nodemon)
 - [ESLint](https://github.com/eslint/eslint)
