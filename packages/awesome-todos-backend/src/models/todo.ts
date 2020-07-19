@@ -13,6 +13,10 @@ const todoSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  creationDate: {
+    type: String,
+    required: true,
+  },
 });
 
 const todoModel = mongoose.model<TodoDocument>('Todo', todoSchema);

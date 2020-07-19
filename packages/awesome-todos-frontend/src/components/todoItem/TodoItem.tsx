@@ -4,6 +4,7 @@ import { Todo } from 'awesome-todos-types';
 import DeleteButton from '../deleteButton/DeleteButton';
 import { useMutation, queryCache } from 'react-query';
 import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
+import DoneButton from '../doneButton/DoneButton';
 
 interface TodoItemProps {
   todo: Todo;
@@ -11,20 +12,33 @@ interface TodoItemProps {
 
 const deleteTodo = (todo: Todo): Promise<void> => awesomeTodosApiClient.deleteTodo({ todo });
 
+const updateTodo = (todo: Todo): Promise<void> => awesomeTodosApiClient.updateTodo({ todo });
+
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
-  const [mutate] = useMutation(deleteTodo, {
+  const [mutateDelete] = useMutation(deleteTodo, {
     onSuccess: () => queryCache.invalidateQueries('todos'),
   });
 
-  const onClick = (): void => {
-    mutate(todo);
+  const [mutateUpdate] = useMutation(updateTodo, {
+    onSuccess: () => queryCache.invalidateQueries('todos'),
+  });
+
+  const onClickDelete = (): void => {
+    mutateDelete(todo);
+  };
+
+  const onClickDone = (): void => {
+    mutateUpdate({ ...todo, completed: true });
   };
 
   return (
     <div className="todo-item-container">
       <div className="todo-item">
-        <span className="todo-text">{todo.task}</span>
-        <DeleteButton onClick={onClick} />
+        <span className={`todo-text ${todo.completed ? 'todo-text-completed' : ''}`}>{todo.task}</span>
+        <div className="todo-item-actions-container">
+          {!todo.completed && <DoneButton disabled={todo.completed} onClick={onClickDone} />}
+          <DeleteButton onClick={onClickDelete} />
+        </div>
       </div>
     </div>
   );

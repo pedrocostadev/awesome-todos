@@ -18,6 +18,11 @@ const Dashboard: React.FC = () => {
     return <p>error {error.message}</p>;
   }
 
+  const completedTodos = (todos as Todo[]).filter((todo) => todo.completed);
+  const notCompletedTodos = (todos as Todo[])
+    .filter((todo) => !todo.completed)
+    .sort((a: Todo, b: Todo) => new Date(a.creationDate).getTime() - new Date(b.creationDate).getTime());
+
   return (
     <main className="dashboard-container">
       <div className="add-todo-container">
@@ -25,7 +30,10 @@ const Dashboard: React.FC = () => {
       </div>
       <div className="todos-wrapper">
         <div className="todos">
-          {(todos as Todo[]).map((todo) => (
+          {notCompletedTodos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
+          {completedTodos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}
         </div>
