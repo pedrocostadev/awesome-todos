@@ -26,6 +26,8 @@ Run `yarn start` at project root.
 - [NodeJs](https://github.com/nodejs)
 - [ExpressJs](https://github.com/expressjs/express)
 - [Mongoose](https://github.com/Automattic/mongoose)
+- [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 
 ### Testing
 - [Jest](https://github.com/facebook/jest)
