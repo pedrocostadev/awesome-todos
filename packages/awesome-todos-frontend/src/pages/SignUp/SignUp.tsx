@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
 import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Link from '../../components/link/Link';
+import SubmitButton from '../../components/submitButton/SubmitButton';
 
 interface State {
   userName: string;
@@ -32,8 +33,7 @@ const SignUp: React.FC = () => {
   const onChangeEmail = (newValue: string): void => setLoginData({ ...loginData, email: newValue });
   const onChangePassword = (newValue: string): void => setLoginData({ ...loginData, password: newValue });
   const onChangePasswordConfirm = (newValue: string): void => setLoginData({ ...loginData, passwordConfirm: newValue });
-  const onConfirm = (ev: MouseEvent<HTMLButtonElement>): void => {
-    ev.preventDefault();
+  const onConfirm = (): void => {
     mutate(loginData);
   };
   return (
@@ -51,9 +51,7 @@ const SignUp: React.FC = () => {
             value={loginData.passwordConfirm}
             onType={onChangePasswordConfirm}
           />
-          <button className="sign-up-button" onClick={onConfirm}>
-            Sign Up
-          </button>
+          <SubmitButton onClick={onConfirm} label="Sign Up" />
         </form>
         <Link to="/signin" label="Alread have an account? Sign in" />
       </div>

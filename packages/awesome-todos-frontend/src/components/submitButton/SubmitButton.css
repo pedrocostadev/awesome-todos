@@ -1,0 +1,12 @@
+.submit-button {
+	padding: var(--spacing-s) var(--spacing-xs);
+	background-color: var(--green);
+	border: none;
+	color: var(--text-color);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-buttons);
+}
+
+.submit-button:focus {
+	outline: none;
+}

@@ -1,13 +1,14 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
 
 import './SignIn.css';
 import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
-import useAuth from '../../hooks/auth/useAuth';
 import ToastMessage from '../../components/toastMessage/ToastMessage';
 import Link from '../../components/link/Link';
+import useAuth from '../../hooks/auth/useAuth';
+import SubmitButton from '../../components/submitButton/SubmitButton';
 
 interface State {
   userName: string;
@@ -43,8 +44,7 @@ const SignIn: React.FC = () => {
 
   const onChangeUsername = (newValue: string): void => setLoginData({ ...loginData, userName: newValue });
   const onChangePassword = (newValue: string): void => setLoginData({ ...loginData, password: newValue });
-  const onConfirm = (ev: MouseEvent<HTMLButtonElement>): void => {
-    ev.preventDefault();
+  const onConfirm = (): void => {
     if (!isValid(loginData.userName) || !isValid(loginData.password)) {
       showError();
       return;
@@ -59,9 +59,7 @@ const SignIn: React.FC = () => {
         <form className="form-container">
           <Input name="userName" value={loginData.userName} onType={onChangeUsername} />
           <Input type="password" name="password" value={loginData.password} onType={onChangePassword} />
-          <button className="sign-in-button" onClick={onConfirm}>
-            Sign In
-          </button>
+          <SubmitButton onClick={onConfirm} label="Sign In" />
         </form>
         <ToastMessage show={showLoginError} message="Invalid data" />
         <Link to="/signup" label="Register now" />
