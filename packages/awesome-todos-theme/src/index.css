@@ -1,5 +1,6 @@
 :root {
 	/* Colors */
+	--text-color-dark: #333;
 	--text-color: #fff;
 	--background-color: #efdec9;
 	--green: #3abca7;
@@ -7,7 +8,9 @@
 	--red: #d65949;
 
 	/* Fonts size */
-	--font-size-headings: 18px;
+	--font-size-xl: 20px;
+	--font-size-l: 18px;
+	--font-size-buttons: 16px;
 	--font-size-body: 14px;
 
 	/* Fonts weights */

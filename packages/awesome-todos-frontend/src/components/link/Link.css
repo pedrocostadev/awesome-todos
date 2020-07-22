@@ -1,0 +1,5 @@
+.link {
+	color: var(--text-color-dark);
+	display: block;
+	text-align: center;
+}

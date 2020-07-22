@@ -1,11 +1,12 @@
 import React, { useState, MouseEvent } from 'react';
 import { useMutation } from 'react-query';
+import { useHistory } from 'react-router-dom';
 
-import Header from '../../components/header/Header';
-import Input from '../../components/input/Input';
 import './SignUp.css';
 import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
-import { useHistory } from 'react-router-dom';
+import Header from '../../components/header/Header';
+import Input from '../../components/input/Input';
+import Link from '../../components/link/Link';
 
 interface State {
   userName: string;
@@ -54,6 +55,7 @@ const SignUp: React.FC = () => {
             Sign Up
           </button>
         </form>
+        <Link to="/signin" label="Alread have an account? Sign in" />
       </div>
     </>
   );

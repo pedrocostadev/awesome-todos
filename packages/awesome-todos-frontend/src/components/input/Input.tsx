@@ -17,7 +17,9 @@ const Input: React.FC<InputProps> = ({ onType, name, label, value, wrapperClassN
 
   return (
     <div className={wrapperClassName || 'input-container'}>
-      <label htmlFor={name}>{labelText}</label>
+      <label className="label" htmlFor={name}>
+        {labelText}
+      </label>
       <input
         className="input-field"
         {...otherInputProps}

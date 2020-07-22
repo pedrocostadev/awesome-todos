@@ -2,11 +2,13 @@
 	margin-bottom: var(--spacing-m);
 	display: flex;
 	flex-direction: column;
+	color: var(--text-color-dark);
 }
 
 .input-field {
 	box-sizing: border-box;
 	padding: var(--spacing-s) var(--spacing-xs);
+	margin-top: var(--spacing-xs);
 	border: 1px solid var(--green);
 }
 

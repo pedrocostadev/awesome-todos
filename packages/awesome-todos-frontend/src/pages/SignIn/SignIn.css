@@ -1,0 +1,20 @@
+.sign-in-container {
+	position: absolute;
+	top: var(--head-height);
+	width: 100%;
+	bottom: 0;
+	background-color: var(--background-color);
+}
+
+.sign-in-button {
+	padding: var(--spacing-s) var(--spacing-xs);
+	background-color: var(--green);
+	border: none;
+	color: var(--text-color);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-buttons);
+}
+
+.sign-in-button:focus {
+	outline: none;
+}

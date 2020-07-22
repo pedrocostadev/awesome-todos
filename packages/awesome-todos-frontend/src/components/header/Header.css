@@ -1,6 +1,5 @@
 .header-container {
 	height: var(--head-height);
-	background-color: var(--yellow-light);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -12,6 +11,7 @@
 	background-color: var(--green);
 	color: var(--text-color);
 	font-weight: bold;
+	font-size: var(--font-size-xl);
 }
 
 .header-app-name {
