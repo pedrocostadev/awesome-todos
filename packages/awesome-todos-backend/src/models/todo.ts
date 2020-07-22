@@ -17,6 +17,10 @@ const todoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user: {
+    type: String,
+    required: true,
+  },
 });
 
 const todoModel = mongoose.model<TodoDocument>('Todo', todoSchema);

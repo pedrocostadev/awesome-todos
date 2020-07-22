@@ -20,7 +20,7 @@ router.post('/signIn', async (req, res, next) => {
       throw new Error('Incorrect password');
     }
 
-    const token = jwt.sign({ id: foundUser.userName }, env.secret, { expiresIn: '7d' });
+    const token = jwt.sign({ id: foundUser._id }, env.secret, { expiresIn: '7d' });
 
     res.cookie('x-access-token', `Bearer ${token}`, {
       secure: false, // Should be true in production

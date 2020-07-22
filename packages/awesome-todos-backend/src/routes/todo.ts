@@ -6,7 +6,8 @@ const router = express.Router();
 
 router.get('/todos', async (req, res, next) => {
   try {
-    const todos = await db.Todo.find({});
+    const { id } = res.locals.jwtPayload;
+    const todos = await db.Todo.find({ user: id });
     return success(res, todos);
   } catch (err) {
     next({ status: 400, message: 'failed to get todos' });
@@ -15,7 +16,8 @@ router.get('/todos', async (req, res, next) => {
 
 router.post('/todos', async (req, res, next) => {
   try {
-    const todo = await db.Todo.create(req.body);
+    const { id } = res.locals.jwtPayload;
+    const todo = await db.Todo.create({ ...req.body, user: id });
     return success(res, todo);
   } catch (err) {
     next({ status: 400, message: 'failed to create todo' });

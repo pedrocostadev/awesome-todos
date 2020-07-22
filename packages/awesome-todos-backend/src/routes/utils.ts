@@ -15,11 +15,8 @@ export const verifyJWT = (req: express.Request, res: express.Response, next): ex
   const bearer = (token as string).split(' ');
   const bearerToken = bearer[1];
 
-  let jwtPayload;
-
   try {
-    jwtPayload = jwt.verify(bearerToken, env.secret);
-    // TODO: why???
+    const jwtPayload = jwt.verify(bearerToken, env.secret);
     res.locals.jwtPayload = jwtPayload;
   } catch (error) {
     res.status(401).send();
