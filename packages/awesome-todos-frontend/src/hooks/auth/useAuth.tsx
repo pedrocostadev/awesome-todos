@@ -34,7 +34,7 @@ export const AuthProvider: React.FC<{ children: React.ReactElement }> = ({ child
     setUser(user);
   };
 
-  const isAuthenticated = user != undefined;
+  const isAuthenticated = user !== undefined;
 
   return <AuthContext.Provider value={{ user, logout, login, isAuthenticated }}>{children}</AuthContext.Provider>;
 };
