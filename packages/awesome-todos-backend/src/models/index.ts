@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import todoModel from './todo';
+import userModel from './user';
 
 mongoose.connect('mongodb://localhost/todo-app', {
   keepAlive: true,
@@ -13,4 +14,5 @@ mongoose.Promise = Promise; // setting mongoose's Promise to use Node's Promise
 
 export default {
   Todo: todoModel,
+  User: userModel,
 };
