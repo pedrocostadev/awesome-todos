@@ -1,0 +1,15 @@
+.input-container {
+	margin-bottom: var(--spacing-m);
+	display: flex;
+	flex-direction: column;
+}
+
+.input-field {
+	box-sizing: border-box;
+	padding: var(--spacing-s) var(--spacing-xs);
+	border: 1px solid var(--green);
+}
+
+.input-field:focus {
+	outline: 2px solid var(--green);
+}
