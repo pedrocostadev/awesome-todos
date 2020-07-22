@@ -8,7 +8,7 @@ import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
 import { Todo } from 'awesome-todos-types';
 
 const Dashboard: React.FC = () => {
-  const { isLoading, error, data: todos } = useQuery('todos', () => awesomeTodosApiClient.getTodos());
+  const { isLoading, error, data: todos } = useQuery('todos', () => awesomeTodosApiClient.todo.getAll());
 
   if (isLoading) {
     return <p>loading</p>;

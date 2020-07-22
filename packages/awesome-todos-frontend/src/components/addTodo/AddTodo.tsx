@@ -8,7 +8,7 @@ import './AddTodo.css';
 
 const isValidTodoTask = (task: string | undefined): boolean => !!task && typeof task === 'string' && task.length > 1;
 
-const addTodo = (todoTask: string): Promise<Todo> => awesomeTodosApiClient.addTodo({ todoTask });
+const addTodo = (todoTask: string): Promise<Todo> => awesomeTodosApiClient.todo.addNew({ todoTask });
 
 const AddTodo: React.FC = () => {
   const [mutate] = useMutation(addTodo, {

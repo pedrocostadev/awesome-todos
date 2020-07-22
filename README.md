@@ -37,4 +37,3 @@ Run `yarn start` at project root.
 - [ESLint](https://github.com/eslint/eslint)
 - [Prettier](https://github.com/prettier/prettier)
 - [TS-Node](https://github.com/TypeStrong/ts-node)
-
