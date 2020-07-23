@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import todoModel from './todo';
 import userModel from './user';
 
-const connectionString = process.env.MONGO_CONNECTION_STRING || 'localhost/awesome-todo-app';
+const connectionString = process.env.MONGODB_URI || 'localhost/awesome-todo-app';
 
 mongoose.connect(`mongodb://${connectionString}`, {
   keepAlive: true,
