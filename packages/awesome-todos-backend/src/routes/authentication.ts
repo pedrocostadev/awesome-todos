@@ -11,7 +11,7 @@ const ONE_DAY = 1000 * 60 * 60 * 24 * 1;
 
 router.post('/signIn', async (req, res, next) => {
   try {
-    const { userName, password, email } = req.body;
+    const { userName, password } = req.body;
     const foundUser = await db.User.findOne({ userName });
     const isPasswordCorrect = await bcrypt.compare(password, foundUser.password);
 
@@ -28,7 +28,7 @@ router.post('/signIn', async (req, res, next) => {
       sameSite: 'none',
     });
 
-    return success(res, { userName, email });
+    return success(res, { userName, email: foundUser.email });
   } catch (err) {
     next({ status: 401, message: 'failed to authenticate' });
   }
