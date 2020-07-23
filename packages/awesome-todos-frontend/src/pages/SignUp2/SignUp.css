@@ -3,7 +3,6 @@
 	top: var(--head-height);
 	width: 100%;
 	bottom: 0;
-	background-color: var(--background-color);
 }
 .form-container {
 	margin: var(--spacing-s);

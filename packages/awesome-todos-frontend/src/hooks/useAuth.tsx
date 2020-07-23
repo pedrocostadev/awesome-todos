@@ -29,6 +29,7 @@ const useAuth = (): AuthContext => {
 export const AuthProvider: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const [user, setUser] = useState<User | undefined>();
   const logout = (): void => setUser(undefined);
+  // TODO: how to verify set cookie token in client???
   const login = async (loginData: LoginData): Promise<void> => {
     const user = await awesomeTodosApiClient.user.signIn(loginData);
     setUser(user);

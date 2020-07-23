@@ -1,21 +1,22 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Redirect } from 'react-router-dom';
 
+import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
+import { Todo } from 'awesome-todos-types';
 import './Dashboard.css';
 import TodoItem from '../todoItem/TodoItem';
 import AddTodo from '../addTodo/AddTodo';
-import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
-import { Todo } from 'awesome-todos-types';
 
 const Dashboard: React.FC = () => {
-  const { isLoading, error, data: todos } = useQuery('todos', () => awesomeTodosApiClient.todo.getAll());
+  const { isLoading, error, data: todos } = useQuery('todos', () => awesomeTodosApiClient.todo.getAll(), { retry: 1 });
 
   if (isLoading) {
     return <p>loading</p>;
   }
 
   if (error) {
-    return <p>error {error.message}</p>;
+    return <Redirect to="/signIn" />;
   }
 
   const completedTodos = (todos as Todo[]).filter((todo) => todo.completed);
