@@ -3,7 +3,9 @@ import mongoose from 'mongoose';
 import todoModel from './todo';
 import userModel from './user';
 
-mongoose.connect(`mongodb://${process.env.MONGO_CONNECTION_STRING}`, {
+const connectionString = process.env.MONGO_CONNECTION_STRING || 'localhost/awesome-todo-app';
+
+mongoose.connect(`mongodb://${connectionString}`, {
   keepAlive: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
