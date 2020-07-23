@@ -1,6 +1,7 @@
 # Awesome-Todos App *WIP!!*
 
 An app develop with a monorepo stratey and bootstrapped using [Lerna](https://github.com/lerna/lerna).
+Includes authentication using JWT strategy with a cookie HttpOnly.
 
 ## Screenshot
 
