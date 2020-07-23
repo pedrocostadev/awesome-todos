@@ -8,6 +8,7 @@ import Header from '../../components/header/Header';
 import Input from '../../components/input/Input';
 import Link from '../../components/link/Link';
 import SubmitButton from '../../components/submitButton/SubmitButton';
+import { useToastMessage } from '../../hooks/useToastMessage';
 
 interface State {
   userName: string;
@@ -25,8 +26,11 @@ const SignUp: React.FC = () => {
 
   const history = useHistory();
 
+  const { showErrorMessage } = useToastMessage();
+
   const [mutate] = useMutation(addUser, {
     onSuccess: () => history.push('/home'),
+    onError: () => showErrorMessage('Invalid data'),
   });
 
   const onChangeUsername = (newValue: string): void => setLoginData({ ...loginData, userName: newValue });

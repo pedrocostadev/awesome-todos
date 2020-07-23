@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { User } from 'awesome-todos-types';
-import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
+import awesomeTodosApiClient from '../services/awesomeTodosApiClient';
 
 interface LoginData {
   userName: string;
