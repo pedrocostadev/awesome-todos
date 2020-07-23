@@ -8,8 +8,10 @@
 	box-sizing: border-box;
 	padding: var(--spacing-m) var(--spacing-xs);
 	border: 1px solid var(--green);
+	border-radius: var(--input-border-radius);
 }
 
 .add-todo-input:focus {
-	outline: 2px solid var(--green);
+	outline: none;
+	box-shadow: 0 0 var(--input-border-radius) var(--green);
 }

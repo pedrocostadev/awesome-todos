@@ -5,6 +5,14 @@
 	color: var(--text-color);
 	font-weight: var(--font-weight-bold);
 	font-size: var(--font-size-buttons);
+	border-radius: var(--button-border-radius);
+	cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+	.submit-button {
+		margin: 0 30%;
+	}
 }
 
 .submit-button:focus {

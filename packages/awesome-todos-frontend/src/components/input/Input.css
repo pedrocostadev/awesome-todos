@@ -5,13 +5,22 @@
 	color: var(--text-color-dark);
 }
 
+@media screen and (min-width: 768px) {
+	.input-container {
+		margin: 0 30% var(--spacing-m) 30%;
+		text-align: center;
+	}
+}
+
 .input-field {
 	box-sizing: border-box;
 	padding: var(--spacing-s) var(--spacing-xs);
 	margin-top: var(--spacing-xs);
 	border: 1px solid var(--green);
+	border-radius: var(--input-border-radius);
 }
 
 .input-field:focus {
-	outline: 2px solid var(--green);
+	outline: none;
+	box-shadow: 0 0 var(--input-border-radius) var(--green);
 }

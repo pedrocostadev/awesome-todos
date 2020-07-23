@@ -26,4 +26,8 @@
 	--spacing-l: 20px;
 	--spacing-xl: 25px;
 	--spacing-xxl: 30px;
+
+	/* Border radius */
+	--input-border-radius: 5px;
+	--button-border-radius: 5px;
 }
