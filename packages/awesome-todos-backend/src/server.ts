@@ -1,19 +1,30 @@
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+
+dotenv.config();
+
 import todoRoutes from './routes/todo';
 import authenticationRoutes from './routes/authentication';
 import { verifyJWT } from './routes/utils';
-import cookieParser from 'cookie-parser';
 
 const app = express();
 
-const corsOptions = {
-  origin: 'http://192.168.1.104:3000',
-  credentials: true,
-};
+const corsOrigin = [];
 
-app.use(cors(corsOptions));
+if (process.env.NODE_ENV === 'dev') {
+  corsOrigin.push('http://192.168.1.104:3000');
+  corsOrigin.push('http://localhost:3000');
+}
+
+app.use(
+  cors({
+    credentials: true,
+    origin: corsOrigin,
+  }),
+);
 
 app.use(bodyParser.json());
 

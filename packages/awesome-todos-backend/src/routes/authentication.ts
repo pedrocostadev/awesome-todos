@@ -2,7 +2,6 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
-import env from '../../.env.json';
 import db from '../models';
 import { success } from './utils';
 
@@ -20,7 +19,7 @@ router.post('/signIn', async (req, res, next) => {
       throw new Error('Incorrect password');
     }
 
-    const token = jwt.sign({ id: foundUser._id }, env.secret, { expiresIn: '1d' });
+    const token = jwt.sign({ id: foundUser._id }, process.env.SECRET, { expiresIn: '1d' });
 
     res.cookie('x-access-token', `Bearer ${token}`, {
       secure: false, // Should be true in production
