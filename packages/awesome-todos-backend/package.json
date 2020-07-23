@@ -4,7 +4,7 @@
 	"description": "awesome-todos backend with node, expressjs and mongoose",
 	"main": "src/server.ts",
 	"scripts": {
-		"start:prod": "ts-node src/server.ts",
+		"start:prod": "ts-node server.ts",
 		"start": "nodemon",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint '*/**/*.ts' --quiet --fix"

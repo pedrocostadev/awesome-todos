@@ -7,9 +7,9 @@ import path from 'path';
 
 dotenv.config();
 
-import todoRoutes from './routes/todo';
-import authenticationRoutes from './routes/authentication';
-import { verifyJWT } from './routes/utils';
+import todoRoutes from './src/routes/todo';
+import authenticationRoutes from './src/routes/authentication';
+import { verifyJWT } from './src/routes/utils';
 
 const app = express();
 
