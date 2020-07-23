@@ -8,7 +8,7 @@ import { success } from './utils';
 
 const router = express.Router();
 
-const SEVEN_DAYS = 1000 * 60 * 60 * 24 * 7;
+const ONE_DAY = 1000 * 60 * 60 * 24 * 1;
 
 router.post('/signIn', async (req, res, next) => {
   try {
@@ -20,12 +20,13 @@ router.post('/signIn', async (req, res, next) => {
       throw new Error('Incorrect password');
     }
 
-    const token = jwt.sign({ id: foundUser._id }, env.secret, { expiresIn: '7d' });
+    const token = jwt.sign({ id: foundUser._id }, env.secret, { expiresIn: '1d' });
 
     res.cookie('x-access-token', `Bearer ${token}`, {
       secure: false, // Should be true in production
       httpOnly: true,
-      maxAge: SEVEN_DAYS,
+      maxAge: ONE_DAY,
+      sameSite: 'none',
     });
 
     return success(res, { userName, email });

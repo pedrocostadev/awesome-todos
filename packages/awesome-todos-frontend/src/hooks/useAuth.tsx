@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { User } from 'awesome-todos-types';
+import React from 'react';
+
 import awesomeTodosApiClient from '../services/awesomeTodosApiClient';
 
 interface LoginData {
@@ -8,14 +8,15 @@ interface LoginData {
 }
 
 interface AuthContext {
-  isAuthenticated: boolean;
-  user?: User;
   login(loginData: LoginData): Promise<void>;
-  logout(): void;
 }
 
+const login = async (loginData: LoginData): Promise<void> => {
+  await awesomeTodosApiClient.user.signIn(loginData);
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const AuthContext = React.createContext<any>(undefined);
+const AuthContext = React.createContext<AuthContext>({ login });
 AuthContext.displayName = 'AuthContext';
 
 const useAuth = (): AuthContext => {
@@ -26,18 +27,8 @@ const useAuth = (): AuthContext => {
   return context;
 };
 
-export const AuthProvider: React.FC<{ children: React.ReactElement }> = ({ children }) => {
-  const [user, setUser] = useState<User | undefined>();
-  const logout = (): void => setUser(undefined);
-  // TODO: how to verify set cookie token in client???
-  const login = async (loginData: LoginData): Promise<void> => {
-    const user = await awesomeTodosApiClient.user.signIn(loginData);
-    setUser(user);
-  };
-
-  const isAuthenticated = user !== undefined;
-
-  return <AuthContext.Provider value={{ user, logout, login, isAuthenticated }}>{children}</AuthContext.Provider>;
-};
+export const AuthProvider: React.FC<{ children: React.ReactElement }> = ({ children }) => (
+  <AuthContext.Provider value={{ login }}>{children}</AuthContext.Provider>
+);
 
 export default useAuth;

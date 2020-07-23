@@ -7,12 +7,15 @@ import { Todo } from 'awesome-todos-types';
 import './Dashboard.css';
 import TodoItem from '../todoItem/TodoItem';
 import AddTodo from '../addTodo/AddTodo';
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 
 const Dashboard: React.FC = () => {
-  const { isLoading, error, data: todos } = useQuery('todos', () => awesomeTodosApiClient.todo.getAll(), { retry: 1 });
+  const { isLoading, error, data: todos } = useQuery('todos', awesomeTodosApiClient.todo.getAll, {
+    retry: false,
+  });
 
   if (isLoading) {
-    return <p>loading</p>;
+    return <LoadingSpinner />;
   }
 
   if (error) {

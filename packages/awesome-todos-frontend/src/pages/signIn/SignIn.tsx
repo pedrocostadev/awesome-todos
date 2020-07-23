@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useMutation } from 'react-query';
+import React, { useState } from 'react';
+import { useMutation, queryCache } from 'react-query';
 import { useHistory } from 'react-router-dom';
 
 import './SignIn.css';
@@ -9,7 +9,6 @@ import Link from '../../components/link/Link';
 import useAuth from '../../hooks/useAuth';
 import SubmitButton from '../../components/submitButton/SubmitButton';
 import { useToastMessage } from '../../hooks/useToastMessage';
-import awesomeTodosApiClient from '../../services/awesomeTodosApiClient';
 
 interface State {
   userName: string;
@@ -32,21 +31,13 @@ const SignIn: React.FC = () => {
   const { showErrorMessage } = useToastMessage();
 
   const [mutate] = useMutation(signIn, {
-    onSuccess: () => history.push('/home'),
+    onSuccess: () => {
+      // TODO: ??
+      queryCache.clear();
+      history.push('/');
+    },
     onError: () => showErrorMessage('Invalid login credentials'),
   });
-
-  useEffect(() => {
-    const checkSession = async () => {
-      console.log('checkSession');
-      const user = await awesomeTodosApiClient.user.checkSession();
-      if (user) {
-        login(user);
-        history.push('/home');
-      }
-    };
-    checkSession();
-  }, []);
 
   const onChangeUsername = (newValue: string): void => setLoginData({ ...loginData, userName: newValue });
   const onChangePassword = (newValue: string): void => setLoginData({ ...loginData, password: newValue });

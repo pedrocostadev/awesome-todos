@@ -28,13 +28,7 @@ const signIn = async ({ userName, password }: { userName: string; password: stri
   return awesomeTodosApiClientParser.parseAwesomeTodosApiUser(user) as User; // TODO: User???
 };
 
-const checkSession = async (): Promise<User> => {
-  const { data: user } = await awesomeTodosApiClient.post('/check');
-  return awesomeTodosApiClientParser.parseAwesomeTodosApiUser(user) as User; // TODO: User???
-};
-
 export default {
   signUp,
   signIn,
-  checkSession,
 };
