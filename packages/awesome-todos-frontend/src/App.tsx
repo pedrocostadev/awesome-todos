@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import 'awesome-todos-theme/src/index.css';
 import Home from './pages/home/Home';
-import SignUp from './pages/SignUp2/SignUp';
-import SignIn from './pages/SignIn2/SignIn';
+import SignUp from './pages/signUp/SignUp';
+import SignIn from './pages/signIn/SignIn';
 import AppProviders from './components/appProvider/AppProvider';
 
 const App: React.FC = () => (
