@@ -1,10 +1,12 @@
 import React from 'react';
+
 import './Header.css';
+import Link from '../link/Link';
 
 const Header: React.FC = () => (
   <header className="header-container">
     <img className="logo" src="./logo.png" alt="awesome-todos logo" />
-    <span className="header-app-name">Awesome Todos App</span>
+    <Link to="/" className="header-app-name" label="Awesome Todos App" />
   </header>
 );
 

@@ -6,3 +6,7 @@
 	background-color: var(--green);
 	border: none;
 }
+
+.plus-button:hover {
+	cursor: pointer;
+}

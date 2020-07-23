@@ -46,3 +46,5 @@ Run `yarn start` at project root.
 ## TODO
 - Forms validations
 - Add support for logout
+- Tests
+- Login: Redirect if JWT valid

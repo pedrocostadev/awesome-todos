@@ -6,11 +6,12 @@ import './Link.css';
 interface Props {
   to: string;
   label: string;
+  className?: string;
 }
 
-const Link: React.FC<Props> = ({ to, label }) => {
+const Link: React.FC<Props> = ({ to, label, className }) => {
   return (
-    <ReactRouterLink className="link" to={to}>
+    <ReactRouterLink className={className || 'link'} to={to}>
       {label}
     </ReactRouterLink>
   );

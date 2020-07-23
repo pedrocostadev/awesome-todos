@@ -5,3 +5,7 @@
 	margin-right: var(--spacing-s);
 	outline: none;
 }
+
+.done-button:hover {
+	cursor: pointer;
+}

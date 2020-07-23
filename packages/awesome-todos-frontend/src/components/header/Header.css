@@ -16,6 +16,8 @@
 .header-app-name {
 	padding-left: var(--spacing-s);
 	font-weight: bold;
+	color: var(--white);
+	text-decoration: none;
 }
 
 .logo {
