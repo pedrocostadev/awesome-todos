@@ -2,9 +2,11 @@
 	"name": "root",
 	"private": true,
 	"scripts": {
-		"start": "lerna run start",
+		"start:dev": "lerna run start",
 		"lint": "lerna run lint",
-		"bootstrap": "lerna bootstrap"
+		"bootstrap": "lerna bootstrap",
+		"build": "lerna run build",
+		"start": "lerna run start:prod"
 	},
 	"devDependencies": {
 		"lerna": "^3.22.1"

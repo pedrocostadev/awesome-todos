@@ -3,6 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 
 dotenv.config();
 
@@ -37,6 +38,13 @@ app.use('/', authenticationRoutes);
 app.use('/todos', verifyJWT);
 
 app.use('/', todoRoutes);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
