@@ -6,7 +6,7 @@
 		"lint": "lerna run lint",
 		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build",
-		"start": "lerna run start:prod"
+		"start": "./packages/awesome-todos-backend/yarn run start:prod"
 	},
 	"devDependencies": {
 		"lerna": "^3.22.1"
