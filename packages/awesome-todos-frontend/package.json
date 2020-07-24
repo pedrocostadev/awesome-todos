@@ -42,7 +42,7 @@
 		"prettier": "^2.0.4"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start:dev": "react-scripts start",
 		"build": "react-scripts build",
 		"postbuild": "mv build ../awesome-todos-backend/",
 		"test": "react-scripts test",

@@ -22,7 +22,7 @@ router.post('/signIn', async (req, res, next) => {
     const token = jwt.sign({ id: foundUser._id }, process.env.SECRET, { expiresIn: '1d' });
 
     res.cookie('x-access-token', `Bearer ${token}`, {
-      secure: false, // Should be true in production
+      secure: process.env.NODE_ENV === 'production' ? true : false,
       httpOnly: true,
       maxAge: ONE_DAY,
       sameSite: 'none',
