@@ -6,7 +6,8 @@
 		"lint": "lerna run lint",
 		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build",
-		"start": "lerna run start:prod"
+		"start": "lerna run start:prod",
+		"test": "lerna run test"
 	},
 	"dependencies": {
 		"lerna": "^3.22.1"

@@ -10,7 +10,9 @@ Object {
         data-testid="add-todo-button"
       >
         <svg
+          fill="white"
           height="24"
+          stroke="white"
           viewBox="0 0 24 24"
           width="24"
         >
@@ -27,7 +29,9 @@ Object {
       data-testid="add-todo-button"
     >
       <svg
+        fill="white"
         height="24"
+        stroke="white"
         viewBox="0 0 24 24"
         width="24"
       >

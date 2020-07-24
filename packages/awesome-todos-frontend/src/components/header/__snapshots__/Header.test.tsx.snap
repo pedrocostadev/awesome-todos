@@ -8,11 +8,17 @@ Object {
       <header
         class="header-container"
       >
-        <span
+        <img
+          alt="awesome-todos logo"
+          class="logo"
+          src="./logo.png"
+        />
+        <a
           class="header-app-name"
+          href="/"
         >
-          Awesome Todo App
-        </span>
+          Awesome Todos App
+        </a>
       </header>
     </div>
   </body>,
@@ -20,11 +26,17 @@ Object {
     <header
       class="header-container"
     >
-      <span
+      <img
+        alt="awesome-todos logo"
+        class="logo"
+        src="./logo.png"
+      />
+      <a
         class="header-app-name"
+        href="/"
       >
-        Awesome Todo App
-      </span>
+        Awesome Todos App
+      </a>
     </header>
   </div>,
   "debug": [Function],
