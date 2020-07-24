@@ -4,6 +4,8 @@ An app develop with a monorepo stratey and bootstrapped using [Lerna](https://gi
 
 Includes authentication using JWT strategy with a HttpOnly Cookie.
 
+Deployed using [Heroku](https://www.heroku.com/) [here](https://awesome-todos-20.herokuapp.com/).
+
 ## Screenshot
 
 ![Screen Shot](./screenshots/screen_shot_19_07_20.png)
