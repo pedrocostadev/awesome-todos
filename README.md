@@ -1,4 +1,4 @@
-# Awesome-Todos App *WIP!!*
+# Awesome-Todos App
 
 An app develop with a monorepo stratey and bootstrapped using [Lerna](https://github.com/lerna/lerna).
 
@@ -49,4 +49,6 @@ Run `yarn start` at project root.
 - Forms validations
 - Add support for logout
 - Tests
-- Login: Redirect if JWT valid (head verb?)
+- Login page: Redirect if JWT valid
+- Pre-commit hooks
+- Service worker
