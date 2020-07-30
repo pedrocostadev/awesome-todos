@@ -21,6 +21,7 @@ const Input: React.FC<InputProps> = ({ onType, name, label, value, wrapperClassN
         {labelText}
       </label>
       <input
+        data-testid="input-field"
         className="input-field"
         {...otherInputProps}
         value={value}

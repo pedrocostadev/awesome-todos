@@ -1,45 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> It should render 1`] = `
+exports[`<Input /> It should render 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="header-container"
-        data-testid="header"
+      <div
+        class="input-container"
       >
-        <img
-          alt="awesome-todos logo"
-          class="logo"
-          src="./logo.png"
-        />
-        <a
-          class="header-app-name"
-          href="/"
+        <label
+          class="label"
+          for="task"
         >
-          Awesome Todos App
-        </a>
-      </header>
+          Task
+        </label>
+        <input
+          class="input-field"
+          data-testid="input-field"
+          name="task"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <header
-      class="header-container"
-      data-testid="header"
+    <div
+      class="input-container"
     >
-      <img
-        alt="awesome-todos logo"
-        class="logo"
-        src="./logo.png"
-      />
-      <a
-        class="header-app-name"
-        href="/"
+      <label
+        class="label"
+        for="task"
       >
-        Awesome Todos App
-      </a>
-    </header>
+        Task
+      </label>
+      <input
+        class="input-field"
+        data-testid="input-field"
+        name="task"
+        type="text"
+        value=""
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

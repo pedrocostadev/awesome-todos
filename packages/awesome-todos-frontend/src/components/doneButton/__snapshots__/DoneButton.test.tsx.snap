@@ -1,45 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> It should render 1`] = `
+exports[`<DoneButton /> It should render 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="header-container"
-        data-testid="header"
+      <button
+        class="done-button"
+        data-testid="done-todo-button"
       >
-        <img
-          alt="awesome-todos logo"
-          class="logo"
-          src="./logo.png"
-        />
-        <a
-          class="header-app-name"
-          href="/"
+        <svg
+          height="30"
+          viewBox="0 0 24 24"
+          width="30"
         >
-          Awesome Todos App
-        </a>
-      </header>
+          <path
+            d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+            fill="white"
+          />
+        </svg>
+      </button>
     </div>
   </body>,
   "container": <div>
-    <header
-      class="header-container"
-      data-testid="header"
+    <button
+      class="done-button"
+      data-testid="done-todo-button"
     >
-      <img
-        alt="awesome-todos logo"
-        class="logo"
-        src="./logo.png"
-      />
-      <a
-        class="header-app-name"
-        href="/"
+      <svg
+        height="30"
+        viewBox="0 0 24 24"
+        width="30"
       >
-        Awesome Todos App
-      </a>
-    </header>
+        <path
+          d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"
+          fill="white"
+        />
+      </svg>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -21,7 +21,7 @@ const Dashboard: React.FC<Props> = ({ todos }) => {
         <AddTodo />
       </div>
       <div className="todos-wrapper">
-        <div className="todos">
+        <div className="todos" data-testid="todos-list">
           {notCompletedTodos.map((todo) => (
             <TodoItem key={todo.id} todo={todo} />
           ))}

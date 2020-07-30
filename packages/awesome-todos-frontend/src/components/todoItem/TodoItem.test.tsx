@@ -3,21 +3,21 @@ import { render } from '@testing-library/react';
 
 import TodoItem from './TodoItem';
 
-describe('<AddTodo />', () => {
+describe('<TodoItem />', () => {
   const todoMock = {
     id: '1',
     task: 'Clean the kitchen',
     completed: false,
+    creationDate: '',
   };
 
-  test('It should render the Delete Todo Button', () => {
+  test('It should render the Done and Delete buttons', () => {
     const { getByTestId } = render(<TodoItem todo={todoMock} />);
-    const deleteTodoButton = getByTestId('delete-todo-button');
-    expect(deleteTodoButton).toBeInTheDocument();
+    expect(getByTestId('delete-todo-button')).toBeInTheDocument();
+    expect(getByTestId('done-todo-button')).toBeInTheDocument();
   });
   test('It should show the task text', () => {
-    const { queryAllByText } = render(<TodoItem todo={todoMock} />);
-    const task = queryAllByText(todoMock.task);
-    expect(task.length).toBe(1);
+    const { getByText } = render(<TodoItem todo={todoMock} />);
+    expect(getByText(todoMock.task)).toBeInTheDocument();
   });
 });

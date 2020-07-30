@@ -1,45 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> It should render 1`] = `
+exports[`<SubmitButton /> It should render 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <header
-        class="header-container"
-        data-testid="header"
+      <button
+        class="submit-button"
+        data-testid="submit-button"
       >
-        <img
-          alt="awesome-todos logo"
-          class="logo"
-          src="./logo.png"
-        />
-        <a
-          class="header-app-name"
-          href="/"
-        >
-          Awesome Todos App
-        </a>
-      </header>
+        a label
+      </button>
     </div>
   </body>,
   "container": <div>
-    <header
-      class="header-container"
-      data-testid="header"
+    <button
+      class="submit-button"
+      data-testid="submit-button"
     >
-      <img
-        alt="awesome-todos logo"
-        class="logo"
-        src="./logo.png"
-      />
-      <a
-        class="header-app-name"
-        href="/"
-      >
-        Awesome Todos App
-      </a>
-    </header>
+      a label
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
