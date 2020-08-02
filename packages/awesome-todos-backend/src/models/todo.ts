@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 import { Todo } from 'awesome-todos-types';
 
-type TodoDocument = mongoose.Document & Todo;
+export type TodoDocument = mongoose.Document & Todo;
 
 const todoSchema = new mongoose.Schema({
   task: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   completed: {

@@ -10,11 +10,8 @@ mongoose.connect(`mongodb://${connectionString}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: false,
 });
-
-if (process.env.NODE_ENV === 'dev') {
-  mongoose.set('debug', true);
-}
 
 mongoose.Promise = Promise; // setting mongoose's Promise to use Node's Promise
 

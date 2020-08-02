@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 
-dotenv.config();
+const envPath = process.env.NODE_ENV === 'test' ? '.env.test' : '.env';
+dotenv.config({ path: envPath });
 
 import todoRoutes from './src/routes/todo';
 import authenticationRoutes from './src/routes/authentication';
@@ -35,6 +36,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+export const server = app.listen(PORT);
+
+export default app;
