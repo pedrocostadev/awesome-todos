@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
 import { User } from 'awesome-todos-types';
 
-type UserDocument = mongoose.Document & User;
+export type UserDocument = mongoose.Document & User;
 
 const userSchema = new mongoose.Schema({
   userName: {
     type: String,
     required: true,
+    unique: true,
   },
   email: {
     type: String,

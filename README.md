@@ -52,3 +52,4 @@ Run `yarn start` at project root.
 - Login page: Redirect if JWT valid
 - Pre-commit hooks
 - Service worker
+- Allow login with email
