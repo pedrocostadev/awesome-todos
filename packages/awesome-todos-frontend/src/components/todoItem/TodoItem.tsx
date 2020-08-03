@@ -12,7 +12,7 @@ interface TodoItemProps {
 
 const deleteTodo = (todo: Todo): Promise<void> => awesomeTodosApiClient.todo.remove({ todo });
 
-const updateTodo = (todo: Todo): Promise<void> => awesomeTodosApiClient.todo.update({ todo });
+const updateTodo = (todo: Todo): Promise<Todo> => awesomeTodosApiClient.todo.update({ todo });
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   const [mutateDelete] = useMutation(deleteTodo, {

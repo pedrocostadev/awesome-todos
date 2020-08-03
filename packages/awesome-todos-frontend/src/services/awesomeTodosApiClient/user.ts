@@ -1,6 +1,6 @@
 import awesomeTodosApiClient from './apiClient';
 import awesomeTodosApiClientParser from './apiParser';
-import { User } from 'awesome-todos-types';
+import { UserNonConfidentialData } from 'awesome-todos-types';
 
 const signUp = async ({
   userName,
@@ -19,13 +19,9 @@ const signUp = async ({
   });
 };
 
-const signIn = async ({ userName, password }: { userName: string; password: string }): Promise<User> => {
-  const { data: user } = await awesomeTodosApiClient.post('/signIn', {
-    userName,
-    password,
-  });
-
-  return awesomeTodosApiClientParser.parseAwesomeTodosApiUser(user) as User; // TODO: User???
+const signIn = async (signInData: { userName: string; password: string }): Promise<UserNonConfidentialData> => {
+  const { data: user } = await awesomeTodosApiClient.post('/signIn', signInData);
+  return awesomeTodosApiClientParser.parseAwesomeTodosApiUser(user);
 };
 
 export default {

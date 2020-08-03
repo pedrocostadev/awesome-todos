@@ -12,15 +12,13 @@
 	"dependencies": {
 		"lerna": "^3.22.1"
 	},
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": [ "packages/*" ],
 	"devDependencies": {
 		"husky": "^4.2.5"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn test"
+			"pre-commit": "yarn lint && yarn test"
 		}
 	}
 }

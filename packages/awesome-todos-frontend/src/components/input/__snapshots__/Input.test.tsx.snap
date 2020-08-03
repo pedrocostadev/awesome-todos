@@ -16,7 +16,7 @@ Object {
         </label>
         <input
           class="input-field"
-          data-testid="input-field"
+          data-testid="input-field-task"
           name="task"
           type="text"
           value=""
@@ -36,7 +36,7 @@ Object {
       </label>
       <input
         class="input-field"
-        data-testid="input-field"
+        data-testid="input-field-task"
         name="task"
         type="text"
         value=""

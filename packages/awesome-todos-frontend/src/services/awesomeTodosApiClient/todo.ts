@@ -4,7 +4,7 @@ import { Todo } from 'awesome-todos-types';
 
 const getAll = async (): Promise<Todo[]> => {
   const { data: todos } = await awesomeTodosApiClient.get('/todos');
-  return todos.map(awesomeTodosApiClientParser.parseAwesomeTodosApiTodos);
+  return todos.map(awesomeTodosApiClientParser.parseAwesomeTodosApiTodo);
 };
 
 const addNew = async ({ todoTask }: { todoTask: string }): Promise<Todo> => {
@@ -13,18 +13,19 @@ const addNew = async ({ todoTask }: { todoTask: string }): Promise<Todo> => {
     completed: false,
     creationDate: new Date().toISOString(),
   });
-  return newTodo as Todo;
+  return awesomeTodosApiClientParser.parseAwesomeTodosApiTodo(newTodo);
 };
 
 const remove = async ({ todo }: { todo: Todo }): Promise<void> => {
   await awesomeTodosApiClient.delete(`/todos/${todo.id}`);
 };
 
-const update = async ({ todo }: { todo: Todo }): Promise<void> => {
-  await awesomeTodosApiClient.put(`/todos/${todo.id}`, {
+const update = async ({ todo }: { todo: Todo }): Promise<Todo> => {
+  const { data: updatedTodo } = await awesomeTodosApiClient.put(`/todos/${todo.id}`, {
     task: todo.task,
     completed: todo.completed,
   });
+  return awesomeTodosApiClientParser.parseAwesomeTodosApiTodo(updatedTodo);
 };
 
 export default {

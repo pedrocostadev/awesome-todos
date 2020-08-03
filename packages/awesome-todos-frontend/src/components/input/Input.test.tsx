@@ -16,7 +16,7 @@ describe('<Input />', () => {
   });
   test('It should call onType with value', () => {
     const { getByTestId } = render(<Input {...props} />);
-    const input = getByTestId('input-field');
+    const input = getByTestId(`input-field-${props.name}`);
     fireEvent.change(input, { target: { value: 'test' } });
     expect(props.onType).toHaveBeenCalledWith('test');
   });
