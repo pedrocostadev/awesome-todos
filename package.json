@@ -10,9 +10,12 @@
 		"test": "lerna run test"
 	},
 	"dependencies": {
+		"axios": "0.21.1",
 		"lerna": "^3.22.1"
 	},
-	"workspaces": [ "packages/*" ],
+	"workspaces": [
+		"packages/*"
+	],
 	"devDependencies": {
 		"husky": "^4.2.5"
 	},
